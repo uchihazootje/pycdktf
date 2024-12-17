@@ -1,0 +1,63 @@
+{
+    "name": "pycdktf - CDKTF DEMO",
+    "dockerComposeFile": "docker-compose.yml",
+    "workspaceFolder": "/workspace",
+    "service": "app",
+    "remoteUser": "root",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "eamodio.gitlens",
+                "PKief.material-icon-theme",
+                "njpwerner.autodocstring",
+                "ms-python.vscode-pylance"
+            ],
+            "settings": {
+                "terminal.integrated.scrollback": 20000,
+                "files.insertFinalNewline": true,
+                "files.trimTrailingWhitespace": true,
+                "files.trimFinalNewlines": true,
+                "[markdown]": {
+                    "editor.tabSize": 2
+                },
+                "[python]": {
+                    "languageServer": "Default",
+                    "editor.formatOnSave": true,
+                    "editor.codeActionsOnSave": {
+                        "source.organizeImports": "explicit",
+                        "source.fixAll": "explicit"
+                    },
+                    "analysis": {
+                        "languageServerMode": "Default",
+                        "typeCheckingMode": "strict",
+                        "diagnosticMode": "openFilesOnly",
+                        "completeFunctionParens": true,
+                        "inlayHints.variableTypes": true,
+                        "inlayHints.functionReturnTypes": true,
+                        "inlayHints.callArgumentNames": true,
+                        "inlayHints.pytestParameters": true
+                    },
+                    "shellcheck": {
+                        "customArgs": [
+                            "-x"
+                        ]
+                    },
+                    "testing": {
+                        "unittestEnabled": false,
+                        "pytestEnabled": true
+                    }
+                },
+                "autoDocstring.docstringFormat": "google",
+                "autoDocstring.generateDocstringOnEnter": true,
+                "autoDocstring.includeName": false,
+                "autoDocstring.startOnNewLine": true,
+                "autoDocstring.guessTypes": true,
+                "autoDocstring.quoteStyle": "\"\"\"",
+                "workbench.iconTheme": "material-icon-theme"
+            }
+        }
+    },
+    "containerEnv": {},
+    "postCreateCommand": "bash ./.devcontainer/postCreateCommands.sh"
+}
